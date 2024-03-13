@@ -1,0 +1,47 @@
+.admin-dashboard {
+  background-color: #473e3e;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.admin-dashboard h3 {
+  margin-bottom: 20px;
+}
+
+.dashboard-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px; /* Space between items */
+}
+
+.metric {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.metric h4 {
+  margin-bottom: 10px;
+}
+
+.donation-progress {
+  margin-top: 20px;
+}
+
+.progress-bar {
+  background-color: #007bff;
+  height: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar div {
+  background-color: #00bcd4;
+  height: 100%;
+  transition: width 0.3s ease-in-out;
+}
+
+

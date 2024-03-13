@@ -1,0 +1,81 @@
+/* src/styles/DonationSection.module.css */
+.donation-section {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.donation-section h3 {
+  color: #333;
+}
+
+.donation-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.custom-donation {
+  margin-bottom: 15px;
+}
+
+.custom-donation label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.custom-donation input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.donor-info-form {
+  margin-bottom: 15px;
+}
+
+.donor-info-form h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.donor-info-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.donor-info-form input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.payment-frequency-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.payment-frequency-options label {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.payment-frequency-options input {
+  margin-left: 5px;
+}
+
+.payment-success-message {
+  color: green;
+  font-weight: bold;
+}
+
+.payment-error {
+  color: red;
+}
+
+/* Add any additional styles as needed */
