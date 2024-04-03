@@ -10,7 +10,6 @@ const scheduleMail=()=>{
   try{
     cron.schedule('*,*,*,*,*,*', async() => {
       try{
-          console.log("Hello");
           await sponsor.reminderSponsor();
 
       }catch(err){
@@ -27,9 +26,9 @@ const scheduleMail=()=>{
 
 const allocate = () => {
   try {
-    console.log('Before cron.schedule');
    
-      cron.schedule('30 30 22 * * *', async() => {
+   
+      cron.schedule('30 50 7 * * *', async() => {
         try{
         await allocateDon.allocateDonation();
         await allocateDon.updateCat();
@@ -63,8 +62,6 @@ const allocated = () => {
         scheduled: true,
         timezone: 'Asia/Kathmandu'
       });
-    
-    console.log('After cron.schedule');
   } catch (err) {
     console.log(err);
   }

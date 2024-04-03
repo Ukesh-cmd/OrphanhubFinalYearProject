@@ -35,11 +35,6 @@ const queryAsync = (connection, query, values) => {
 };
 
 
-const connection = pool.getConnection((err) => {
-    if (err) throw err;
-    console.log("database connected");
-})
-
 module.exports = {
     pool,
     getConnection,
