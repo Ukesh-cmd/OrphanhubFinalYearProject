@@ -4,6 +4,8 @@ import DonationForm from '../components/DonationForm';
 import Typed from 'react-typed';
 import DonationPage from './DonationPage';
 import Link from 'next/link';
+import Feeters from './feeters';
+
 const UserPage = () => {
   const [showDonationForm, setShowDonationForm] = useState(false);
   const [donationFormPosition, setDonationFormPosition] = useState({ x: 0, y: 0 });
@@ -73,7 +75,7 @@ const UserPage = () => {
   
     </div> 
     <div className='welcomeh1'><h1>BRIGHT FUTURE</h1></div>
-    <div className='welcomeh11'><h1>FOR THEM</h1></div>
+    <div className='welcomeh11'><h1>FOR CHILDREN'S</h1></div>
     <h3 className="welcome-message">Your gateway to making a difference in children's lives</h3> 
     
 </div>
@@ -84,39 +86,64 @@ const UserPage = () => {
   </div>
   <div class="goal mission">
   <h3>Our Mission</h3>
-  <p>Our mission is to provide orphans and vulnerable childrens with access to quality education, healthcare,
-        <Typed
-          strings={[
-            'Our mission is to provide orphans and vulnerable childrens with access to quality education, healthcare, and a nurturing environment, empowering them to break the cycle of poverty and reach their full potential. We strive to create sustainable solutions that address the unique needs of each child, working closely with communities to foster a sense of belonging and support. Through our  approach, we aim to inspire hope and transform lives, one child at a time.'
-          ]}
-          typeSpeed={9}
-          backSpeed={0}
-          loop={false}
-        /></p>
+  <p>Our mission is to provide orphans and vulnerable childrens with access to quality education, healthcare, and a nurturing environment, empowering them to break the cycle of poverty and reach their full potential. We strive to create sustainable solutions that address the unique needs of each child, working closely with communities to foster a sense of belonging and support. Through our  approach, we aim to inspire hope and transform lives, one child at a time.
+      </p>
+      <Link href="/ChildDetailPage">
+            <button className="donate-buttons">Children's info</button>
+          </Link>  
     </div>
 </div>
 
 
-
-    
-
-    
-         <footer>
-          <section className="donation-box">
-            <h3>Support Us</h3>
-            <div className="logos">
-              <img src="orphanage_logo.png" alt="OrphanageHub Logo" />
-              <h1>OrphanHub</h1>
-              <div className="statement">
-                <p>"Transforming Lives, One Click at a Time:<br />
-                OrphanHub, Impacting Futures."</p>
-              </div>
+<div className="welcome-container">
+            
+            <div className="welcome-image-container">
+              
+              <img className="welcome-image" src="sponsor_image.png" alt="Welcome to OrphanHub" />
+              <div className="welcome-text">
+                <h2>Your help will make a path for a Children's future</h2>
             </div>
-
-            <p>Your contribution can make a difference in the lives of these children. Help us create a better future for them.</p>
-     
-          </section>
-          </footer>
+            <Link href="/sponsor">
+            <button className="donate-buttons">Sponsor Now</button>
+          </Link>
+            
+              </div> 
+           
+              <h3 className="welcome-message"> Sponsor to make a difference in children's lives </h3> 
+              
+          </div>
+          <div class="goals-container">
+  <div class="goal vision">
+    <h2>
+   Adopting a Child is a very careful process and it will change a lot of children's future so they will be able to live with a parent figure.</h2>
+  </div>
+  <div class="goal mission">
+  <h3>Our interest</h3>
+  <p> Make those childrens be able to get good parents who will adopt them and take care of them.Make you be able to see the Children's detail and choose a child to adopt.
+      </p>
+      <Link href="/ChildDetailPage">
+            <button className="donate-buttons">Children's info</button>
+          </Link>
+    </div>
+</div>
+<div className="welcome-container">
+            
+            <div className="welcome-image-container">
+              
+              <img className="welcome-image" src="orphanageadtoption.jpg" alt="Welcome to OrphanHub" />
+              <div className="welcome-text">
+                <h2>You will make a path for a Children's future</h2>
+            </div>
+            <Link href="/ChildDetailPage">
+            <button className="donate-buttons">Children's info</button>
+          </Link>
+            
+              </div> 
+           
+              <h3 className="welcome-message">Your gateway to adopt and change a children's live.</h3> 
+              
+          </div>
+       <Feeters/>
         </div>
       );
     };

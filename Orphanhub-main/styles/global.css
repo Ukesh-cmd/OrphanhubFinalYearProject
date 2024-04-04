@@ -29,11 +29,27 @@ body {
 
 
 .navbar.shrink {
-  padding: 5px 20px; /* Shrink the padding when scrolled */
+  padding: 5px 20px; 
 }
 
-/* Add other styles for your navbar, such as logo, nav links, etc. */
 
+.social-icons {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 20px;
+
+  object-fit: fill;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  font-size: 15px; 
+}
+
+
+.nav-links li div svg {
+  margin-right: 5px;
+}
 .navbar {
   position: relative;
   background-color: #2e3f60;
@@ -81,17 +97,7 @@ body {
       display: block; /* Show the menu icon on smaller screens */
     }
   
-    .nav-links {
-      display: none; /* Hide the nav-links by default on smaller screens */
-      flex-direction: column;
-      position: absolute;
-      top: 60px; /* Adjust as needed */
-      left: 0;
-      right: 0;
-      background-color: #f9f9f9;
-      border: 1px solid #ccc;
-      padding: 10px;
-    }
+ 
   
     .nav-links.open {
       display: flex; 
@@ -206,7 +212,6 @@ body {
   font-size: 2em;
   margin-top: 0.7em;
   color: #c0b1fb;
-  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff; 
   box-shadow: 14px 5px 20px rgba(14, 9, 9, 0.1);
 }
 
@@ -305,6 +310,23 @@ body {
 .switch-text a:hover {
   color: #45a049;
 }
+
+.notification {
+position: fixed;
+bottom: 20px;
+left: 20px;
+right: 20px;
+padding: 16px;
+background-color: #4caf50;
+color: white;
+border-radius: 4px;
+font-size: 16px;
+display: flex;
+align-items: center;
+justify-content: center;
+animation: fadeIn 0.5s ease-in-out;
+}
+
 /* Smaller screens (less than or equal to 768px) */
 @media only screen and (max-width: 768px) {
 .navbar {
@@ -322,24 +344,11 @@ body {
   /* Your menu icon styles */
   display: block;
   cursor: pointer;
-  color: white;
+  color: rgb(16, 15, 15);
   padding: 10px;
 }
 
-.nav-links {
-  list-style-type: none;
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  right: 0;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-top: none;
-  z-index: 1;
-}
+
 
 .nav-links.open {
   display: flex;
@@ -353,6 +362,7 @@ body {
   margin: 0;
   padding: 10px;
   text-align: center;
+  color: #000;
 }
 
 .nav-links div.activelink {
@@ -454,22 +464,6 @@ background-color: #ddd;
 
 .top-donors-table td:last-child {
 text-align: right;
-}
-
-.payment-success-message {
-position: fixed;
-bottom: 20px;
-left: 20px;
-right: 20px;
-padding: 16px;
-background-color: #4caf50;
-color: white;
-border-radius: 4px;
-font-size: 16px;
-display: flex;
-align-items: center;
-justify-content: center;
-animation: fadeIn 0.5s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -776,7 +770,57 @@ section #child-cards {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   
 }
+/* Media query for tablets and smaller devices */
+@media (max-width: 768px) {
+.child-card {
+    width: 100%;
+    margin: 10px 0;
+}
 
+.child-card-container {
+    flex-direction: column;
+}
+
+.child-management table {
+    font-size: 0.8rem;
+}
+
+.child-management th,
+.child-management td {
+    padding: 6px;
+}
+
+.child-management button {
+    padding: 6px;
+    font-size: 0.8rem;
+}
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+.child-card-title {
+    font-size: 1rem;
+}
+
+.child-card-description {
+    font-size: 0.8rem;
+}
+
+.child-card-button {
+    padding: 6px;
+    font-size: 0.8rem;
+}
+
+.child-management th,
+.child-management td {
+    padding: 4px;
+}
+
+.child-management button {
+    padding: 6px;
+    font-size: 0.8rem;
+}
+}
 .donation-box {
   background-color: #171818;
   color: #cdcccc;
@@ -828,7 +872,7 @@ transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 .donate-buttons {
   position: absolute;
-  bottom: 150px; /* Position the button at the vertical center */
+  bottom: 200px; /* Position the button at the vertical center */
   left: 50%; /* Position the button at the horizontal center */
   transform: translate(-50%, -50%); /* Center the button precisely */
   background-color: #fff;
@@ -858,6 +902,32 @@ border-radius: 8px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 480px) {
+  .child-card-title {
+      font-size: 1rem;
+  }
+
+  .child-card-description {
+      font-size: 0.8rem;
+  }
+
+  .child-card-button {
+      padding: 6px;
+      font-size: 0.8rem;
+  }
+
+  .child-management th,
+  .child-management td {
+      padding: 6px;
+      word-wrap: break-word;
+      font-size: smaller;
+  }
+
+  .child-management button {
+      padding: 6px;
+      font-size: 0.8rem;
+  }
+}
 .donation-section::before {
 content: '';
 position: absolute;
@@ -872,7 +942,30 @@ background-size: 400% 400%;
 animation: glowing 2s linear infinite;
 }
 
+@media (max-width: 768px) {
+.donation-box {
+  background-color: #171818;
+  color: #cdcccc;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 2em;
+}
 
+.donation-box h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.donation-box p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+}
 /* Donation Option Styles */
 .donation-option {
 background-color: #ffffff;
@@ -1544,17 +1637,43 @@ height: 540px;
   width: 100%;
   height: 100%; 
   object-fit: cover; 
-  bottom: 90px;
+  bottom: 80px;
 overflow: hidden;
 }
 
 
 .welcome-text {
   position: absolute;
-  bottom: 265px;
+  bottom: 415px;
   left: 15px;
-  color: #e4b3f2; /* Base color */
+  color: #111111; /* Base color */
   z-index: 1;
+  font-size: large;
+  text-shadow:  0 0 20px #363236,  0 0 70px #180d18; 
+  font-weight: 900;
+}
+.welcome-container {
+  position: relative;
+}
+
+.welcome-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-image {
+  width: 100%;
+  height: auto;
+}
+
+.welcome-image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for transparency */
 }
 #loading {
   display: flex;
@@ -1570,36 +1689,34 @@ overflow: hidden;
 
 .welcome-text h2 {
   /* Styles for the h2 element */
-  text-shadow: 0 0 10px #ff00ff, 0 0 20px #363236, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff; 
+  color: #caeabb; 
   margin-bottom: -200px; /* Add some bottom margin to create space */
   font: x-large;
   font-weight: 600;
-  text-shadow: 0 0 10px #75a2fc, 0 0 20px #363236, 0 0 30px #80ccef, 0 0 40px #4e6f86, 0 0 50px #6288e1, 0 0 60px #7bafed, 0 0 70px #92a3f8; 
   
 }
 
 .welcomeh1 {
   /* Styles for the h2 element */
-  text-shadow: 0 0 10px #100b10, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff; 
-  
+  text-shadow: 0 0 10px #f2f2f2, 0 0 20px #161616, 0 0 30px #070707, 0 0 40px;  
+   color: #caeabb; /* Text color */
+
   position: absolute;
-  top: 39px; /* Position at the top */
+  top: 309px; /* Position at the top */
   right: 510px; /* Position at the right */
-  padding: 10px; /* Add padding for better readability */
-     color: #caeabb; /* Text color */
-  z-index: 1; /* Ensure it's above the image */
+  padding: 10px; 
+    
+  z-index: 1; 
 
 
 }
 .welcomeh11 {
-  /* Styles for the h2 element */
-  text-shadow: 0 0 10px #100b10, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff; 
-  
+ 
   position: absolute;
-  top: 100px; /* Position at the top */
-  right: 530px; /* Position at the right */
-  padding: 10px; /* Add padding for better readability */
-     color: #caeabb; /* Text color */
+  top: 100px; 
+  right: 530px;
+  padding: 10px;  
+  color: #caeabb;
   z-index: 1; /* Ensure it's above the image */
   font-size: large;
 
@@ -1609,10 +1726,10 @@ overflow: hidden;
   top: 351px; /* Position at the top */
   right: 19px; /* Position at the right */
   padding: 10px; /* Add padding for better readability */
-  text-shadow: 0 0 10px #9d729d, 0 0 20px #4d354d, 0 0 30px #ff00ff, 0 0 40px #070707, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff; 
-  color: #caeabb; /* Text color */
+
   z-index: 1; /* Ensure it's above the image */
-  
+  color: #caeabb;
+  font-size: large;
 }
 @keyframes fadeIn {
   from {
@@ -1678,11 +1795,482 @@ text-shadow: 2px 2px 4px rgba(255, 198, 198, 0.5);
 
 
 
-
-
-
 @media (max-width: 768px) {
   .progress-bar {
       width: 100%;
   }
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  .navbar a {
+    color: #fff;
+    padding: 10px;
+    display: block;
+  }
+
+  .navbar a:hover {
+    background-color: #555;
+  }
+
+  .profile-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #333;
+    padding: 10px;
+    display: none;
+    z-index: 1000;
+  }
+
+  .profile-menu a {
+    color: #fff;
+    padding: 10px;
+    display: block;
+  }
+
+  .profile-menu a:hover {
+    background-color: #555;
+  }
+
+  .profile-menu-toggle {
+    display: block;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .profile-menu-toggle:hover {
+    background-color: #555;
+  }
+
+  .profile-menu-toggle:after {
+    content: "\f0c9";
+    font-family: "FontAwesome";
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  .profile-menu-toggle.active:after {
+    content: "\f00d";
+  }
+
+  .profile-menu.active {
+    display: block;
+  }
+
+  .welcome-container {
+    display: none;
+  }
+
+  .welcome-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .welcome-text h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .welcome-text p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+
+  .welcome-button {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .stat {
+    flex: 0 0 300px;
+    margin: 0 20px 20px 0;
+  }
+
+  .stat h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .stat p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .stat button {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .child-management {
+    margin-top: 50px;
+  }
+
+  .child-management h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .dashboard-table th,
+  .dashboard-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-size: 18px
+  }
+.bpic {
+  display: none;
+}
+
+.statement {
+  font-size: 14px;
+}
+
+.logos {
+  margin: 0;
+  display: none;
+}
+
+.logos img {
+  width: 20px;
+  height: 20px;
+}
+
+.navbar {
+  position: relative;
+  background-color: #2e3f60;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(228, 183, 183, 0.1);
+}
+
+.menu-icon {
+  display: block; /* Show the menu icon on smaller screens */
+}
+
+
+
+.nav-links div.activelink {
+  color: #c0b1fb;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+}
+
+.profile-container {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.profile-container img {
+  width: 40px;
+  height: 43px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 2px;
+}
+
+.profile-container:hover .profile-menu {
+  display: block;
+}
+
+.profile-menu {
+  background: linear-gradient(45deg, #d5a6d5, #728585, #d9bdd9, #c7efef);
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #222020;
+  border: 1px solid #0e0c0c;
+  border-radius: 4px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  font-weight: 600;
+}
+
+.profile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-menu li {
+  text-align: center;
+}
+
+.profile-menu a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  padding: 8px 0;
+}
+
+.profile-menu a:hover {
+  background-color: #1e1e1e;
+}
+.container {
+  margin: 2.5em;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 16em;
+  margin-left: -24em;
+  position: relative;
+}
+
+.bpic {
+  display: none;
+}
+
+.statement {
+  font-size: 14px;
+}
+
+.logos {
+  margin: 0;
+  display: none;
+}
+
+.logos img {
+  width: 20px;
+  height: 20px;
+}
+
+.navbar {
+  position: relative;
+  background-color: #2e3f60;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(228, 183, 183, 0.1);
+}
+
+.menu-icon {
+  display: block; 
+}
+
+
+
+.nav-links.open {
+  display: flex;
+}
+
+.nav-links a {
+  padding: 10px;
+}
+
+.nav-links li {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+.nav-links div.activelink {
+  color: #c0b1fb;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+}
+
+.profile-container {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.profile-container img {
+  width: 40px;
+  height: 43px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 2px;
+}
+
+.profile-container:hover .profile-menu {
+  display: block;
+}
+
+.profile-menu {
+  background: linear-gradient(45deg, #d5a6d5, #728585, #d9bdd9, #c7efef);
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #222020;
+  border: 1px solid #0e0c0c;
+  border-radius: 4px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  font-weight: 600;
+}
+
+.profile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-menu li {
+  text-align: center;
+}
+
+
+.profile-menu a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  display: block;
+  border-bottom: 1px solid #fff;
+  transition: background-color 0.3s ease;
+}
+
+.profile-menu a:hover {
+  background-color: #fff;
+  color: #222020;
+}
+
+.profile-menu a:last-child {
+  border-bottom: none;
+}
+
+.profile-menu-item {
+  text-align: left;
+}
+
+.profile-menu-item img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.profile-menu-item span {
+  vertical-align: middle;
+  font-size: 16px;
+}
+
+.profile-menu-item:last-child {
+  margin-top: 10px;
+}
+
+.profile-menu-item a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.profile-menu-item a:hover {
+  background-color: #fff;
+  color: #222020;
+}
+.navbar {
+  flex-direction: column;
+}
+
+.navbar a {
+  text-align: left;
+}
+
+.welcomeh11 {
+  position: relative;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  text-shadow: 0 0 10px #f2f2f2, 0 0 20px #161616, 0 0 30px #070707, 0 0 40px #070707;  
+   color: #caeabb;
+  z-index: 1;
+  font-size: large;
+}
+
+.welcome-message {
+  position: relative;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  text-shadow: 2px 2px 4px rgba(255, 198, 198, 0.5);
+  color: #0a0a0a;
+  font-size: large;
+}
+
+.goals-container {
+  padding: 1em 5em;
+}
+
+.goal {
+  padding: 10px;
+  box-sizing: border-box;
+  text-shadow: 2px 2px 4px rgba(255, 198, 198, 0.5);
+}
+
+.goal h2 {
+  font-size: 10px;
+  color: #4a4a4a;
+  margin-bottom: 10px;
+}
+
+.goal p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666666;
+
+}
+
+.vision h2 {
+  font-size: 20px;
+  color: #a52cd1;
+  padding:4px 12px;
+  text-shadow: 2px 2px 4px rgba(255, 198, 198, 0.5);
+}
+
+}
+
+@media (max-width: 768px) {
+.admin-dashboard h3 {
+  font-size: 20px;
+}
+
+.metric h4 {
+  font-size: 16px;
+}
+}
+
+/* Media query for extra small screens */
+@media (max-width: 480px) {
+.admin-dashboard h3 {
+  font-size: 18px;
+}
+
+.metric h4 {
+  font-size: 14px;
+}
 }
